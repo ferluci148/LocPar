@@ -24,20 +24,19 @@
   <div id="map" style="width: 100%;height:700px;background-color: bisque;"></div>
   <div style="margin:5px;width: 100%;height:auto;" >  
         
-        <b style="margin-left:20px;">Fincas</b>
-        <select  id="cajaFincas" style="margin-left:50px;font-size: 12px;height: 40px;width: 250px;display:block;" onchange="fincaSeleccionada(this.options[this.selectedIndex].value);">
+        <b style="margin-left:28px;">Selecciona la Parcela a Visualizar</b>
+        <select  id="cajaFincas" style="margin-left:50px;font-size: 12px;height: 40px;width: 80%;display:block;" onchange="fincaSeleccionada(this.options[this.selectedIndex].value);">
             <option value="">Selecciona Finca</option>
         </select>
-        <b>Latitud:</b><input type="text" id="cajaLatitud"></input>
+        <p></p>
+        <b style="margin-left: 4%;">Latitud:</b><input type="text" id="cajaLatitud"></input>
         <b>Longitud:</b><input type="text" id="cajaLongitud"></input>
       <p></p>
-        <input type="button" id="ccomoLLegar"  style="margin-left:10%; font-size: 24px;border-radius: 20%;background-color: blue;color:white"  value="Camino" onclick="ComoLLegar()"></input>
-        <input type="button" id="DibujaPosicion" style="margin-left:15%; font-size: 24px;border-radius: 15%;background-color: rgb(105, 10, 10);color:white"  value="Posicion" onclick="dibujaPosicion()"></input>
-        <input type="button" id="ccomoLLegarpunto"  style="margin-left:10%; font-size: 24px;border-radius: 20%;background-color: rgba(7, 247, 19, 0.856);color:white"  value=".-.-.-.-." onclick="ComoLLegarPunto()"></input>
+        <input type="button" id="ccomoLLegar"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: blue;color:white"  value="Ruta población" onclick="ComoLLegar()"></input>
+        <input type="button" id="DibujaPosicion" style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgb(105, 10, 10);color:white"  value="Marcar Inicio Ruta" onclick="dibujaPosicion()"></input>
+        <input type="button" id="ccomoLLegarpunto"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgba(7, 247, 19, 0.856);color:white"  value="Ruta desde marca" onclick="ComoLLegarPunto()"></input>
        
-  </div>display:block;
-  height:50px;
-  width:200px;
+  </div>
   <script>
 
 
