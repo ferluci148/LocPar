@@ -61,8 +61,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
     document.getElementById("installButton").style.display = "block";
 });
 
-document.getElementById("installButton").addEventListener("click", () => {
-  alert("dddd");
+document.getElementById("installButton").addEventListener("click", () => {   
     if (deferredPrompt) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
