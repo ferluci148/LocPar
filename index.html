@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Localizador de Fincas</title>
   <style>
     SELECT {   
@@ -8,6 +10,10 @@
    font-family : verdana,arial,helvetica;   
 }
   </style>
+ <link rel="manifest" href="manifest.json">
+
+
+
   <script type="text/javascript" src="choposJson.js"></script> 
   <script>
     (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
@@ -35,9 +41,38 @@
         <input type="button" id="ccomoLLegar"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: blue;color:white"  value="Ruta población" onclick="ComoLLegar()"></input>
         <input type="button" id="DibujaPosicion" style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgb(105, 10, 10);color:white"  value="Marcar Inicio Ruta" onclick="dibujaPosicion()"></input>
         <input type="button" id="ccomoLLegarpunto"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgba(7, 247, 19, 0.856);color:white"  value="Ruta desde marca" onclick="ComoLLegarPunto()"></input>
-       
+        <button id="installButton" style="display:block;">Instalar</button>
   </div>
   <script>
+// PWA -----------------------------------------------------
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(() => {
+        console.log("Service Worker registrado.");
+    }).catch((error) => {
+        console.error("Error registrando el Service Worker:", error);
+    });
+}
+
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    document.getElementById("installButton").style.display = "block";
+});
+
+document.getElementById("installButton").addEventListener("click", () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === "accepted") {
+                console.log("PWA instalada");
+            }
+            deferredPrompt = null;
+        });
+    }
+});
+
 
 
 
