@@ -41,7 +41,7 @@
         <input type="button" id="ccomoLLegar"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: blue;color:white"  value="Ruta población" onclick="ComoLLegar()"></input>
         <input type="button" id="DibujaPosicion" style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgb(105, 10, 10);color:white"  value="Marcar Inicio Ruta" onclick="dibujaPosicion()"></input>
         <input type="button" id="ccomoLLegarpunto"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgba(7, 247, 19, 0.856);color:white"  value="Ruta desde marca" onclick="ComoLLegarPunto()"></input>
-        <button id="" style="display:block;">Instalar</button>
+        <button id="installButton" style="display:block;">Instalar</button>
   </div>
   <script>
 // PWA -----------------------------------------------------
@@ -61,7 +61,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
     document.getElementById("installButton").style.display = "block";
 });
 
-document.getElementById("installButton").addEventListener("click", () => {   
+document.getElementById("installButton").addEventListener("click", () => {
     if (deferredPrompt) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
