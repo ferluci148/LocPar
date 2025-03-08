@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="sorteo" style="font-size: 48px;"/>
+    <input type="button" id="enviar" value ="Pantalla"  style="margin-left:20px;font-size:  48px;"/>
+    <script>
+        let envioPantalla=document.getElementById("enviar");
+       
+        envioPantalla.addEventListener("click",()=>{
+            let numero=document.getElementById("sorteo").value;
+            alert(numero)
+            let urlEnvio="http://192.168.1.14:8080?numero="+numero
+            window.location.href=urlEnvio
+        },false)
+
+    </script>
+</body>
+</html>
