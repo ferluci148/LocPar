@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+  <h1 style="margin-top: 100px;"> LEER DATOS SORTEO</h1>
+  <h2 id="cajon"></h2>
     <input type="text" id="caja" />
   <script>
 
@@ -27,11 +29,11 @@ request.onsuccess = (event) => {
     if (dato) {
       console.log('Dato recuperado:', dato);
       // Ejemplo: Mostrar en el DOM
-      document.body.innerHTML = `
+      document.getElementById("cajon").innerHTML = `
         <h1>${dato.contenido.nombre}</h1>
-      `;
+      `;      
     } else {
-      console.log('No se encontró el registro');
+       document.getElementById("cajon").innerHTML ='No se encontró el registro';
     }
   };
 
