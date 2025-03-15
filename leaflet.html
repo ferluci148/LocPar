@@ -12,7 +12,12 @@
 
   <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-
+  
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+  
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+  
 
   <script type="text/javascript" src="choposJson.js"></script>
   <style>
@@ -42,11 +47,11 @@
 
 <body>
 
-  <div id="map" style="height: 500px;width: 95%;"></div>
+
 
   <div style="margin:5px;width: 100%;height:auto;">
     <b style="margin-left:28px;">Selecciona la Parcela a Visualizar</b>
-
+    
     <select id="cajaFincas" style="margin-left:50px;font-size: 12px;height: 40px;width: 80%;display:block;"
       onchange="fincaSeleccionada(this.value);">
       <option value="">Selecciona Finca</option>
@@ -72,7 +77,8 @@
       value="Mapa Catastro" onclick="VisualizarMapaCatastro()"></input>
     <button id="installButton" style="display:block;">Instalar pwa</button>
   </div>
-
+<!-- Dib donde se dibuja el mapa y todas las acciones sobre el mismo -->
+  <div id="map"></div>
   <script>
 
 
@@ -245,7 +251,6 @@
           layers: "Catastro",
           format: "image/png",
           transparent: true
-         
         }).addTo(map);
 
         catastro = true;
@@ -262,64 +267,64 @@
       if (!navigator.geolocation) {
         alert("Tu navegador no soporta geolocalización.");
         return;
-      }
+    }
 
-      navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition(
         function (position) {
-          let latitudg = position.coords.latitude;
-          let longitudg = position.coords.longitude;
-          let accuracy = position.coords.accuracy; // Precisión en metros
+            let latitudg = position.coords.latitude;
+            let longitudg = position.coords.longitude;
+            let accuracy = position.coords.accuracy; // Precisión en metros
 
-          // Obtener referencias a las cajas de texto
-          let cajaLatitud = document.getElementById("cajaLatitud");
-          let cajaLongitud = document.getElementById("cajaLongitud");
+            // Obtener referencias a las cajas de texto
+            let cajaLatitud = document.getElementById("cajaLatitud");
+            let cajaLongitud = document.getElementById("cajaLongitud");
 
-          // Asignar valores a las cajas
-          if (cajaLatitud && cajaLongitud) {
-            cajaLatitud.value = latitudg.toFixed(6);
-            cajaLongitud.value = longitudg.toFixed(6);
-          }
+            // Asignar valores a las cajas
+            if (cajaLatitud && cajaLongitud) {
+                cajaLatitud.value = latitudg.toFixed(6);
+                cajaLongitud.value = longitudg.toFixed(6);
+            }
 
-          // Centrar el mapa en la ubicación obtenida
-          map.setView([latitudg, longitudg], 16);
+            // Centrar el mapa en la ubicación obtenida
+            map.setView([latitudg, longitudg], 16);
 
-          // Definir un icono personalizado (si es necesario)
-          let miIcono = L.icon({
-            iconUrl: 'banderaG.png',  // Asegúrate de que el archivo existe
-            iconSize: [15, 15],    // Tamaño del icono
-            // iconAnchor: [16, 32],  // Punto de anclaje del icono
-            // popupAnchor: [0, -32]  // Posición del popup
-          });
+            // Definir un icono personalizado (si es necesario)
+            let miIcono = L.icon({
+                iconUrl: 'banderaG.png',  // Asegúrate de que el archivo existe
+                iconSize: [15, 15],    // Tamaño del icono
+               // iconAnchor: [16, 32],  // Punto de anclaje del icono
+               // popupAnchor: [0, -32]  // Posición del popup
+            });
 
-          // Agregar un marcador con popup
-          L.marker([latitudg, longitudg], { icon: miIcono }).addTo(map)
-            .bindPopup(`Lat: ${latitudg.toFixed(6)}, Lng: ${longitudg.toFixed(6)}<br>Precisión: ${accuracy.toFixed(2)}m`)
-            .openPopup();
+            // Agregar un marcador con popup
+            L.marker([latitudg, longitudg], { icon: miIcono }).addTo(map)
+                .bindPopup(`Lat: ${latitudg.toFixed(6)}, Lng: ${longitudg.toFixed(6)}<br>Precisión: ${accuracy.toFixed(2)}m`)
+                .openPopup();
         },
         function (error) {
-          let mensajeError;
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              mensajeError = "El usuario denegó la solicitud de geolocalización.";
-              break;
-            case error.POSITION_UNAVAILABLE:
-              mensajeError = "La información de ubicación no está disponible.";
-              break;
-            case error.TIMEOUT:
-              mensajeError = "La solicitud de geolocalización tardó demasiado.";
-              break;
-            default:
-              mensajeError = "Error desconocido al obtener la ubicación.";
-              break;
-          }
-          alert(mensajeError);
+            let mensajeError;
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    mensajeError = "El usuario denegó la solicitud de geolocalización.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    mensajeError = "La información de ubicación no está disponible.";
+                    break;
+                case error.TIMEOUT:
+                    mensajeError = "La solicitud de geolocalización tardó demasiado.";
+                    break;
+                default:
+                    mensajeError = "Error desconocido al obtener la ubicación.";
+                    break;
+            }
+            alert(mensajeError);
         },
         {
-          enableHighAccuracy: true, // Usar GPS si está disponible
-          timeout: 10000, // Esperar hasta 10 segundos antes de fallar
-          maximumAge: 0 // No usar datos en caché
+            enableHighAccuracy: true, // Usar GPS si está disponible
+            timeout: 10000, // Esperar hasta 10 segundos antes de fallar
+            maximumAge: 0 // No usar datos en caché
         }
-      );
+    );
     }
   </script>
 
