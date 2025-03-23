@@ -26,36 +26,36 @@
   </script>
 </head>
 <body>
- 
-  <div id="map" style="width: 100%;height:700px;background-color: bisque;"></div>
   <div style="margin:5px;width: 100%;height:auto;" >  
         
-        <b style="margin-left:28px;">Selecciona la Parcela a Visualizar</b>
-        <select  id="cajaFincas" style="margin-left:50px;font-size: 12px;height: 40px;width: 80%;display:block;" onchange="fincaSeleccionada(this.options[this.selectedIndex].value);">
-            <option value="">Selecciona Finca</option>
-        </select>
-        <p></p>
-        <b style="margin-left: 4%;">Latitud:</b><input type="text" id="cajaLatitud"></input>
-        <b>Longitud:</b><input type="text" id="cajaLongitud"></input>
-      <p></p>
-        <input type="button" id="ccomoLLegar"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: blue;color:white"  value="Ruta población" onclick="ComoLLegar()"></input>
-        <input type="button" id="DibujaPosicion" style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgb(105, 10, 10);color:white"  value="Marcar Inicio Ruta" onclick="dibujaPosicion()"></input>
-        <input type="button" id="ccomoLLegarpunto"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgba(7, 247, 19, 0.856);color:white"  value="Ruta desde marca" onclick="ComoLLegarPunto()"></input>
+    <b style="margin-left:28px;">Selecciona la Parcela a Visualizar</b>
+    <select  id="cajaFincas" style="margin-left:50px;font-size: 12px;height: 40px;width: 80%;display:block;" onchange="fincaSeleccionada(this.options[this.selectedIndex].value);">
+        <option value="">Selecciona Finca</option>
+    </select>
+    <p></p>
+    <b style="margin-left: 4%;">Latitud:</b><input type="text" id="cajaLatitud"></input>
+    <b>Longitud:</b><input type="text" id="cajaLongitud"></input>
+  <p></p>
+    <input type="button" id="ccomoLLegar"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: blue;color:white"  value="Ruta población" onclick="ComoLLegar()"></input>
+    <input type="button" id="ccomoLLegarpunto"  style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgba(7, 247, 19, 0.856);color:white"  value="Ruta desde marca" onclick="ComoLLegarPunto()"></input>
+   
+    <input type="button" id="DibujaPosicion" style="margin-left:5%; font-size: 24px;border-radius: 5%;background-color: rgb(105, 10, 10);color:white"  value="Geolocalizar" onclick="dibujaPosicion()"></input>
+     <input type="button" id="mapaCatastro"
+    style="margin-left:2%; font-size: 24px;border-radius: 5%;background-color: rgba(190, 24, 107, 0.856);color:black"
+    value="Mapa Catastro" onclick="VisualizarMapaCatastro()"></input>
+    <button id="installButton" style="display:block;">Instalar</button>
+</div>
+  <div id="map" style="width: 100%;height:700px;background-color: bisque;"></div>
 
-        <input type="button" id="mapaCatastro"
-        style="margin-left:2%; font-size: 24px;border-radius: 5%;background-color: rgba(190, 24, 107, 0.856);color:white"
-        value="Mapa Catastro" onclick="VisualizarMapaCatastro()"></input>
-        <button id="installButton" style="display:block;">Instalar</button>
-  </div>
   <script>
 // PWA -----------------------------------------------------
-if ("serviceWorker" in navigator) {
+/*if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").then(() => {
         console.log("Service Worker registrado.");
     }).catch((error) => {
         console.error("Error registrando el Service Worker:", error);
     });
-}
+}*/
 
 let deferredPrompt;
 
@@ -172,7 +172,10 @@ CartgarDatosFincas()
                     icon: icon
                 });
                 var infoWindow = new google.maps.InfoWindow();
+
+                // Crar marcador mapa
                 google.maps.event.addListener(marker, 'click', function () {
+                
                     map.setCenter(new google.maps.LatLng(parcela.latitud,parcela.longitud));
                     map.setZoom(16);
                     
@@ -220,6 +223,8 @@ CartgarDatosFincas()
           
         var latitud =  41.699814
         var longitud =-3.574915
+        var latitudPosicion =  41.699814
+        var longitudPosicion =-3.574915
       
         let map;
 
@@ -239,10 +244,11 @@ CartgarDatosFincas()
             title: 'Mi ubicación actual' // Marker label
             });
 // Geolocalizacion
-            map.addListener("click", () => {
+            map.addListener("click", (event) => {
+             
                 let tzoom = 16;
                 
-                  
+              
                 icono = {
                         url: "bandera.png", // url
                         scaledSize: new google.maps.Size(tzoom, tzoom), // scaled size
@@ -253,20 +259,26 @@ CartgarDatosFincas()
                 const options = {
                             enableHighAccuracy: true 
                         };  
-                navigator.geolocation.getCurrentPosition(function(position) {
-                let latitudg = position.coords.latitude;
-                let longitudg= position.coords.longitude;
-                var accuracy = position.coords.accuracy;
+              
+        
+        
+         // Create a marker 
+         let posicionActulamapa=(event.latLng+"").split(",");
+      
+        platitud = posicionActulamapa[0].substr(1,posicionActulamapa[0].length)
+        plongitud =  posicionActulamapa[1].substr(1,posicionActulamapa[0].length-1)
+      
+        latitudPosicion = platitud
+        longitudPosicion =plongitud
+     
+ 
 
-
-            // Create a marker to represent the user's location
-                const marker = new google.maps.Marker({
-                position: { lat: latitudg, lng: longitudg },
+         const marker = new google.maps.Marker({
+                position:  event.latLng,
                 icon: icono,
                 map: map,
-                title: 'Mi ubicación actual' + latitudg// Marker label
+                title: 'Mi ubicación actual' + event.latLng// Marker label
             });
-        },function errorees(error){},{maximumAge:60000, timeout:20000, enableHighAccuracy:true});
         
 
 
@@ -315,11 +327,7 @@ CartgarDatosFincas()
         // Get the user's current location
 
       function ComoLLegar(){
-
-       // const map = new google.maps.Map(document.getElementById('map'), {
-    //center: { lat: 41.67913834361563, lng: -3.5817146301269 },
-  //  zoom: 15
- // });
+ 
 
   // Create the directions service
   const directionsService = new google.maps.DirectionsService();
@@ -354,42 +362,41 @@ CartgarDatosFincas()
       }
  
 function ComoLLegarPunto(){
+  console.log("RUTA" +latitudPosicion)
 
-// const map = new google.maps.Map(document.getElementById('map'), {
-//center: { lat: 41.67913834361563, lng: -3.5817146301269 },
-//  zoom: 15
-// });
 
-// Create the directions service
-const directionsService = new google.maps.DirectionsService();
+  // Create the directions service
+  const directionsService = new google.maps.DirectionsService();
 
-// Create the directions renderer
-const directionsRenderer = new google.maps.DirectionsRenderer({
-map: map
-});
+  // Create the directions renderer
+  const directionsRenderer = new google.maps.DirectionsRenderer({
+    map: map
+  });
 
-// Create the request object
-milat=eval(cajaLatitud.value);
-miLon=eval(cajaLongitud.value) ;
- 
+  // Create the request object
+  milat=eval(cajaLatitud.value);
+  miLon=eval(cajaLongitud.value) ;
 
-const request = {
-origin: { lat: latitudPosicionClick, lng:longituPosicionClick }, //latitud, longitud de la posicion creada en el mapa
-destination: { lat: milat, lng: miLon  },
-travelMode: google.maps.TravelMode.DRIVING
-};
 
-// Route the directions
-directionsService.route(request, function(response, status) {
-if (status === google.maps.DirectionsStatus.OK) {
-// Directions successful, render the route
-directionsRenderer.setDirections(response);
-} else {
-// Directions failed, handle error
-console.error('Directions request failed due to ' + status);
+  
+  const request = {
+    origin: { lat:eval(latitudPosicion), lng: eval(longitudPosicion) }, //latitud, longitud QUEMADA
+    destination: { lat: milat, lng: miLon  },
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+
+  // Route the directions
+  directionsService.route(request, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      // Directions successful, render the route
+      directionsRenderer.setDirections(response);
+    } else {
+      // Directions failed, handle error
+      console.error('Directions request failed due to ' + status);
+    }
+  });
 }
-});
-}
+
 
 
 
@@ -418,32 +425,42 @@ function ComoLLegar2()
  
          
             initMap();
-         
-  let catastroVisble =false
-  function VisualizarMapaCatastro(){
+
+            
+// Catastro
+
+let catastroVisble = false
+function VisualizarMapaCatastro() {
+    //alert("Mapa Catastro   "+catastroVisble)
     var catastroLayer = new google.maps.ImageMapType({
-                getTileUrl: function (coord, zoom) {
-                    var proj = map.getProjection();
-                    var zfactor = Math.pow(2, zoom);
-                    var topLeft = proj.fromPointToLatLng(new google.maps.Point(coord.x * 256 / zfactor, coord.y * 256 / zfactor));
-                    var bottomRight = proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * 256 / zfactor, (coord.y + 1) * 256 / zfactor));
+        getTileUrl: function (coord, zoom) {
+            var proj = map.getProjection();
+            var zfactor = Math.pow(2, zoom);
+            var topLeft = proj.fromPointToLatLng(new google.maps.Point(coord.x * 256 / zfactor, coord.y * 256 / zfactor));
+            var bottomRight = proj.fromPointToLatLng(new google.maps.Point((coord.x + 1) * 256 / zfactor, (coord.y + 1) * 256 / zfactor));
 
-                    var bbox = `${topLeft.lng()},${bottomRight.lat()},${bottomRight.lng()},${topLeft.lat()}`;
+            var bbox = `${topLeft.lng()},${bottomRight.lat()},${bottomRight.lng()},${topLeft.lat()}`;
 
-                    return `https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=Catastro&FORMAT=image/png&SRS=EPSG:4326&BBOX=${bbox}&WIDTH=256&HEIGHT=256`;
-                },
-                tileSize: new google.maps.Size(256, 256),
-                opacity: 0.5
-            });
-          if(catastroVisble==false){
-            catastroVisble=true
-            map.overlayMapTypes.push(catastroLayer);
-          }
-          else{
-            catastroVisble =false
-            map.overlayMapTypes.pop();
-          }
-  }
+            return `https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=Catastro&FORMAT=image/png&SRS=EPSG:4326&BBOX=${bbox}&WIDTH=256&HEIGHT=256`;
+        },
+        tileSize: new google.maps.Size(256, 256),
+        opacity: 2
+    });
+    if (catastroVisble == false) {
+        catastroVisble = true
+        map.overlayMapTypes.push(catastroLayer);
+        mapaCatastro.style.color="white"
+    }
+    else {
+        catastroVisble = false
+        map.overlayMapTypes.pop();
+        mapaCatastro.style.color="black"
+    }
+}
+
+
   </script>
+
+
 </body>
 </html>

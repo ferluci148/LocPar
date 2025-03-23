@@ -13,9 +13,9 @@
   <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>  
   -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
-
+  
   <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
-
+  
 
   <script type="text/javascript" src="choposJson.js"></script>
   <style>
@@ -39,17 +39,7 @@
       display: none;
     }
 
-    /* Aspecto del icono ratón*/
-    .leaflet-container {
-      cursor: default !important;
-      /* Cambia el cursor a una flecha normal */
-    }
-
-    .leaflet-marker-icon,
-    .leaflet-interactive {
-      cursor: crosshair !important;
-      /* Usa una cruz en lugar de la mano */
-    }
+    /* Oculta el panel de instrucciones de la ruta.*/
   </style>
 </head>
 
@@ -59,7 +49,7 @@
 
   <div style="margin:5px;width: 100%;height:auto;">
     <b style="margin-left:28px;">Selecciona la Parcela a Visualizar</b>
-
+    
     <select id="cajaFincas" style="margin-left:50px;font-size: 12px;height: 40px;width: 80%;display:block;"
       onchange="fincaSeleccionada(this.value);">
       <option value="">Selecciona Finca</option>
@@ -83,20 +73,12 @@
     <input type="button" id="mapaCatastro"
       style="margin-left:2%; font-size: 24px;border-radius: 5%;background-color: rgba(190, 24, 107, 0.856);color:white"
       value="Mapa Catastro" onclick="VisualizarMapaCatastro()"></input>
-
-    <input type="button" id="coordenadasRecinto"
-      style="margin-left:2%; font-size: 24px;border-radius: 5%;background-color: rgba(190, 24, 107, 0.856);color:white"
-      value="Coord. Parcela" onclick="capturaCoordenadasRecinto()"></input>
-    <input type="text" id="cajaCoordenadasRecinto" style="margin-left:2%; font-size: 10px;width: 95%;display:none;"
-      placeholder="Coordenados nueva finca"></input>
-
     <button id="installButton" style="display:block;">Instalar pwa</button>
   </div>
-  <!-- Dib donde se dibuja el mapa y todas las acciones sobre el mismo -->
+<!-- Dib donde se dibuja el mapa y todas las acciones sobre el mismo -->
   <div id="map"></div>
   <script>
-    //Obtener coordenadas nueva parcela
-    let capturarCoordenadas = false
+
 
     //https://www.andresmartinezsoto.eu/creacion-de-mapas-interactivos-con-leaflet-parte-2-funcionalidades-avanzadas/
 
@@ -133,48 +115,19 @@
     }).addTo(map);
 
     map.removeLayer(catastroLayer);
-
     // Evento de clic en el mapa
-    //-------------------------------------------------------------------
     map.on('click', function (e) {
       const { lat, lng } = e.latlng;
       document.getElementById("cajaLatitud").value = lat;
       document.getElementById("cajaLongitud").value = lng;
 
       // Añadir un marcador en la posición clicada
-      //------------------------------------------------------------
       L.marker([lat, lng], { icon: miIcono }).addTo(map)
         .bindPopup(`Lat: ${lat.toFixed(6)}, Lng: ${lng.toFixed(6)}`)
         .openPopup();
-      //alert(capturarCoordenadas)
-      if (capturarCoordenadas) {
-        recinto = document.getElementById("cajaCoordenadasRecinto");
-        recinto.value = recinto.value + "[" + lat + "," + lng + "],"
-        let coorRecinto = recinto.value;
-        const coordenadas = coorRecinto.match(/\[.*?\]/g).map(coord =>
-          coord.replace(/\[|\]/g, '').split(',').map(Number)
-        );
-        visualizaParcelaNueva(coordenadas)
-      }
-
-
-
     });
-    // Visualiza el recinto de la parcela nueva que se esta creando
-    let contadorPoligonos = 0
-    function visualizaParcelaNueva(recinto) {
-     
-      contadorPoligonos++;
-      console.log(contadorPoligonos)
-     // markers[parcela.id] = L.marker([parcela.latitud, parcela.longitud], { icon: miIcono }).addTo(map).bindPopup(parcela.descripcion);
-      polygons[contadorPoligonos] = L.polygon(recinto, { color: 'purple' }).addTo(map);
-      map.removeLayer(polygons[contadorPoligonos-1]);
-      // Centrar el mapa en la latitud, longitud de la parcela buscada
-      // map.setView([parcela.latitud, parcela.longitud], 16);
- 
-for (i=0;i< polygons.length;i++)
-      map.removeLayer(polygons[i]);
-    }
+
+
     let latitudPosicionClick = 0
 
     let longituPosicionClick = 0
@@ -201,24 +154,20 @@ for (i=0;i< polygons.length;i++)
       var sololl = parcela.recinto.replaceAll("new google.maps.LatLng", "")
       var sololl = sololl.replaceAll("(", "[")
       var sololl = sololl.replaceAll(")", "]")
-      console.log(sololl);
       //var sololl="["+sololl+"]"
       const coordinates = sololl.match(/\[.*?\]/g).map(coord =>
         coord.replace(/\[|\]/g, '').split(',').map(Number)
       );
-      //alert(coordinates)
+
       console.log(coordinates);
       //coords: [[41.697, -3.573], [41.699, -3.573], [41.699, -3.571], [41.697, -3.571]]
       console.log(sololl)
-      markers[parcela.id] = L.marker([parcela.latitud, parcela.longitud], { icon: miIcono }).addTo(map).bindPopup(parcela.descripcion);
+      markers[parcela.id] = L.marker([parcela.latitud, parcela.longitud], { icon: miIcono }).addTo(map).bindPopup(parcela.descripcion+"</br> Pol_Par:"+parcela.poligono+"-"+parcela.parcela+"</br>Ref. :"+parcela.referencia+"</br>"+parcela.plantacion+"</br>Supe. :"+parcela.superficie);
       polygons[parcela.id] = L.polygon(coordinates, { color: 'green' }).addTo(map);
 
       // Centrar el mapa en la latitud, longitud de la parcela buscada
       map.setView([parcela.latitud, parcela.longitud], 16);
     }
-
-
-
 
 
     numeroFincas = 0;
@@ -288,25 +237,27 @@ for (i=0;i< polygons.length;i++)
     // Visualizar/Ocultarmapa catastro
 
 
+    let catastroVisble = false
     function VisualizarMapaCatastro() {
-
+ 
+    if (catastroVisble == false) {
+        catastroVisble = true
+      
+        mapaCatastro.style.color="white"
+    }
+    else {
+        catastroVisble = false
+      
+        mapaCatastro.style.color="black"
+    }
 
       if (!catastro) {
         // Añadir la capa WMS del Catastro
-       /* catastroLayer = L.tileLayer.wms("https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx", {
+        catastroLayer = L.tileLayer.wms("https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx", {
           layers: "Catastro",
           format: "image/png",
           transparent: true
-        }).addTo(map);*/
-
-        catastroLayer = L.tileLayer.wms("https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx", {
-    layers: "Catastro",
-    format: "image/png",
-    transparent: true,
-    version: "1.3.0",
-    crs: L.CRS.EPSG3857,  // Usar la misma proyección del mapa base
-    uppercase: true
-}).addTo(map);
+        }).addTo(map);
 
         catastro = true;
       }
@@ -322,79 +273,64 @@ for (i=0;i< polygons.length;i++)
       if (!navigator.geolocation) {
         alert("Tu navegador no soporta geolocalización.");
         return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          let latitudg = position.coords.latitude;
-          let longitudg = position.coords.longitude;
-          let accuracy = position.coords.accuracy; // Precisión en metros
-
-          // Obtener referencias a las cajas de texto
-          let cajaLatitud = document.getElementById("cajaLatitud");
-          let cajaLongitud = document.getElementById("cajaLongitud");
-
-          // Asignar valores a las cajas
-          if (cajaLatitud && cajaLongitud) {
-            cajaLatitud.value = latitudg.toFixed(6);
-            cajaLongitud.value = longitudg.toFixed(6);
-          }
-
-          // Centrar el mapa en la ubicación obtenida
-          map.setView([latitudg, longitudg], 16);
-
-          // Definir un icono personalizado (si es necesario)
-          let miIcono = L.icon({
-            iconUrl: 'banderaG.png',  // Asegúrate de que el archivo existe
-            iconSize: [15, 15],    // Tamaño del icono
-            // iconAnchor: [16, 32],  // Punto de anclaje del icono
-            // popupAnchor: [0, -32]  // Posición del popup
-          });
-
-          // Agregar un marcador con popup
-          L.marker([latitudg, longitudg], { icon: miIcono }).addTo(map)
-            .bindPopup(`Lat: ${latitudg.toFixed(6)}, Lng: ${longitudg.toFixed(6)}<br>Precisión: ${accuracy.toFixed(2)}m`)
-            .openPopup();
-        },
-        function (error) {
-          let mensajeError;
-          switch (error.code) {
-            case error.PERMISSION_DENIED:
-              mensajeError = "El usuario denegó la solicitud de geolocalización.";
-              break;
-            case error.POSITION_UNAVAILABLE:
-              mensajeError = "La información de ubicación no está disponible.";
-              break;
-            case error.TIMEOUT:
-              mensajeError = "La solicitud de geolocalización tardó demasiado.";
-              break;
-            default:
-              mensajeError = "Error desconocido al obtener la ubicación.";
-              break;
-          }
-          alert(mensajeError);
-        },
-        {
-          enableHighAccuracy: true, // Usar GPS si está disponible
-          timeout: 10000, // Esperar hasta 10 segundos antes de fallar
-          maximumAge: 0 // No usar datos en caché
-        }
-      );
     }
 
-    //Obtener coordenadas nueva parcela
-    //let capturarCoordenadas=false
-    function capturaCoordenadasRecinto() {
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            let latitudg = position.coords.latitude;
+            let longitudg = position.coords.longitude;
+            let accuracy = position.coords.accuracy; // Precisión en metros
 
-      let recinto = document.getElementById("cajaCoordenadasRecinto")
-      if (capturarCoordenadas == false) {
-        recinto.style.display = "block";
-        capturarCoordenadas = true
-      }
-      else {
-        recinto.style.display = "none";
-        capturarCoordenadas = false
-      }
+            // Obtener referencias a las cajas de texto
+            let cajaLatitud = document.getElementById("cajaLatitud");
+            let cajaLongitud = document.getElementById("cajaLongitud");
+
+            // Asignar valores a las cajas
+            if (cajaLatitud && cajaLongitud) {
+                cajaLatitud.value = latitudg.toFixed(6);
+                cajaLongitud.value = longitudg.toFixed(6);
+            }
+
+            // Centrar el mapa en la ubicación obtenida
+            map.setView([latitudg, longitudg], 16);
+
+            // Definir un icono personalizado (si es necesario)
+            let miIcono = L.icon({
+                iconUrl: 'banderaG.png',  // Asegúrate de que el archivo existe
+                iconSize: [15, 15],    // Tamaño del icono
+               // iconAnchor: [16, 32],  // Punto de anclaje del icono
+               // popupAnchor: [0, -32]  // Posición del popup
+            });
+
+            // Agregar un marcador con popup
+            L.marker([latitudg, longitudg], { icon: miIcono }).addTo(map)
+                .bindPopup(`Lat: ${latitudg.toFixed(6)}, Lng: ${longitudg.toFixed(6)}<br>Precisión: ${accuracy.toFixed(2)}m`)
+                .openPopup();
+        },
+        function (error) {
+            let mensajeError;
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    mensajeError = "El usuario denegó la solicitud de geolocalización.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    mensajeError = "La información de ubicación no está disponible.";
+                    break;
+                case error.TIMEOUT:
+                    mensajeError = "La solicitud de geolocalización tardó demasiado.";
+                    break;
+                default:
+                    mensajeError = "Error desconocido al obtener la ubicación.";
+                    break;
+            }
+            alert(mensajeError);
+        },
+        {
+            enableHighAccuracy: true, // Usar GPS si está disponible
+            timeout: 10000, // Esperar hasta 10 segundos antes de fallar
+            maximumAge: 0 // No usar datos en caché
+        }
+    );
     }
   </script>
 

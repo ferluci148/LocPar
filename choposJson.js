@@ -1,24 +1,12 @@
 fincas = [
-    {
-        "id": "0",
-        "descripcion": "La Calabaza",
-        "poligono": "538",
-        "parcela": "6704",
-        "plantacion": "Tinto temparnillo",
-        "superficie": "44a",
-        "cepas": "800",
-        "edad": "18",
-        "latitud": "41.67913834361563",
-        "longitud": "-3.5817146301269",
-        "recinto": "new google.maps.LatLng(41.67765188586432, -3.5826855897903442),new google.maps.LatLng(41.6791423501939, -3.581693172454834),new google.maps.LatLng(41.679154369927204, -3.5819238424301147),new google.maps.LatLng(41.6777400325646, -3.582921624183655)"
-    },
-    {
+       {
         "id": "1",
         "descripcion": "La Presa",
         "poligono": "529",
         "parcela": "910",
-        "plantacion": "Chopos",
-        "superficie": "45a",
+        "referencia": '09287A529009100000DU ',
+        "plantacion": "Secano",
+        "superficie": "4.308 m2",
         "cepas": "--",
         "edad": "--",
         "latitud": "41.69813473375674",
@@ -33,8 +21,9 @@ fincas = [
         "descripcion": "Puente de la Tajo",
         "poligono": "529",
         "parcela": "878",
-        "plantacion": "Chopos",
-        "superficie": "71a",
+        "referencia": '09287A529008780000DH',
+        "plantacion": "Secano",
+        "superficie": "7.092 m2",
         "cepas": "--",
         "edad": "--",
         "latitud": "41.6937767158053",
@@ -46,8 +35,9 @@ fincas = [
         "descripcion": "Zazuar",
         "poligono": "512",
         "parcela": "341",
-        "plantacion": "Chopos",
-        "superficie": "88a",
+        "referencia": '09287A512003410000DJ  ',
+        "plantacion": "Secano",
+        "superficie": "9.035 m2",
         "cepas": "--",
         "edad": "--",
         "latitud": "41.700890386820035",
@@ -59,8 +49,9 @@ fincas = [
         "descripcion": "Soto Bajero",
         "poligono": "531",
         "parcela": "1059",
-        "plantacion": "Chopos",
-        "superficie": "95a",
+        "referencia": '09287A531010590000DK',
+        "plantacion": "Secano",
+        "superficie": "9.370 m2",
         "cepas": "--",
         "edad": "--",
         "latitud": "41.69005934949943",
@@ -72,8 +63,9 @@ fincas = [
         "descripcion": "LO Malo 1",
         "poligono": "532",
         "parcela": "1102",
-        "plantacion": "Chopos",
-        "superficie": "39a",
+        "referencia": '09287A532011020000DR',
+        "plantacion": "Secano",
+        "superficie": "3.858 m2",
         "cepas": "--",
         "edad": "--",
         "latitud": "41.69039584408525",
@@ -85,8 +77,9 @@ fincas = [
         "descripcion": "Lo Malo Pilar",
         "poligono": "532",
         "parcela": "1090",
-        "plantacion": "Chopos",
-        "superficie": "76a",
+        "referencia": '09287A532010900000DB',
+        "plantacion": "Secano",
+        "superficie": "7.479 m2",
         "cepas": "--",
         "edad": "-",
         "latitud": "41.68975490050034",
@@ -98,16 +91,17 @@ fincas = [
         "descripcion": "Lo Malo Aytmto.",
         "poligono": "532",
         "parcela": "1088",
-        "plantacion": "Chopos",
-        "superficie": "20a",
-        "cepas": "600",
+        "referencia": '09287A532010880000DY',
+        "plantacion": "Secano",
+        "superficie": "2.090 m2",
+        "cepas": "__",
         "edad": "30/12",
         "latitud": "41.6896988176328",
         "longitud": "-3.606905937194824",
         "recinto": "new google.maps.LatLng(41.6896988176328, -3.606905937194824),new google.maps.LatLng(41.68970682947404, -3.6067771911621094),new google.maps.LatLng(41.688569138033216, -3.6066484451293945),new google.maps.LatLng(41.68853709009564, -3.6067771911621094),new google.maps.LatLng(41.6896988176328, -3.606905937194824)"
     },
     {
-        id: '10',
+        id: '8',
         descripcion: 'Cooperativa Chopos Arroyo',
         poligono: '519 ',
         parcela: '6712',
@@ -119,27 +113,15 @@ fincas = [
         latitud: '41.703903672114194',
         longitud: '-3.5812208090706066',
         recinto: 'new google.maps.LatLng(41.703903672114194, -3.5812208090706066), new google.maps.LatLng(41.704584524660625, -3.5802713070793346), new google.maps.LatLng(41.70469666438851, -3.580432239620228), new google.maps.LatLng(41.70476474912789, -3.580560985652943), new google.maps.LatLng(41.70464459953916, -3.5806253586693004), new google.maps.LatLng(41.70405586330906, -3.5812261734886364), new google.maps.LatLng(41.70393170736134, -3.5812208090706066)'
-    },
+    },     
     {
-        "id": "11",
-        "descripcion": "La Calabaza",
-        "poligono": "538",
-        "parcela": "6704",
-        "plantacion": "Tinto temparnillo",
-        "superficie": "44a",
-        "cepas": "800",
-        "edad": "18",
-        "latitud": "41.67913834361563",
-        "longitud": "-3.5817146301269",
-        "recinto": "new google.maps.LatLng(41.67765188586432, -3.5826855897903442),new google.maps.LatLng(41.6791423501939, -3.581693172454834),new google.maps.LatLng(41.679154369927204, -3.5819238424301147),new google.maps.LatLng(41.6777400325646, -3.582921624183655)"
-    },
-    {
-        "id": "12",
+        "id": "9",
         "descripcion": "Quiñones 5260",
         "poligono": "501",
         "parcela": "5260",
+        "referencia": '09287A501052600000DS',
         "plantacion": "Monte",
-        "superficie": "88ca",
+        "superficie": "881 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7285100269",
@@ -147,12 +129,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7285100269, -3.5601320435 ) ,new google.maps.LatLng(41.7284774672, -3.5601036783 )  ,new google.maps.LatLng(41.7292230816,-3.5581246591),new google.maps.LatLng(41.7292621528 ,-3.5581464785 ) ,new google.maps.LatLng(41.7285100269, -3.5601320435 ) "
     },
     {
-        "id": "13",
+        "id": "10",
         "descripcion": "Quiñones 5252",
         "poligono": "501",
         "parcela": "5252",
+        "referencia": '09287A501052520000DD',
         "plantacion": "Monte",
-        "superficie": "88ca",
+        "superficie": "831 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7281553056",
@@ -160,12 +143,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7281553056 , -3.5597829320 ) ,new google.maps.LatLng(41.7281237878 ,-3.5597423793 )  ,new google.maps.LatLng(41.7287869205,-3.5578195171),new google.maps.LatLng(41.7288234808 , -3.5578431727) ,new google.maps.LatLng(41.7281553056 ,-3.5597829320) "
     },
     {
-        "id": "14",
+        "id": "11",
         "descripcion": "Quiñones 5250",
         "poligono": "501",
         "parcela": "5250",
+        "referencia": '09287A501052500000DK',
         "plantacion": "Monte",
-        "superficie": "88ca",
+        "superficie": "2.859 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7280368483",
@@ -173,12 +157,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7280368483,-3.5596388506 ) ,new google.maps.LatLng(41.7279183408,-3.5595307208 ),new google.maps.LatLng(41.7285638257,-3.5576788151)  ,new google.maps.LatLng(41.7286898963,-3.5577497819) ,new google.maps.LatLng(41.7280368483,-3.5596388506) "
     },
     {
-        "id": "15",
+        "id": "12",
         "descripcion": "Quiñones 5231",
         "poligono": "501",
         "parcela": "5231",
+        "referencia": '09287A501052310000DH',
         "plantacion": "Monte",
-        "superficie": "88ca",
+        "superficie": "1.298 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7262264334 ",
@@ -186,12 +171,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7262264334, -3.5586486948) ,new google.maps.LatLng(41.7261407022, -3.5586385567)  ,new google.maps.LatLng(41.7267004745,-3.5571719094),new google.maps.LatLng(41.7267685546,-3.5572192206) ,new google.maps.LatLng(41.7262264334,-3.5586486948) "
     },
     {
-        "id": "16",
+        "id": "13",
         "descripcion": "Rio la Tejera",
         "poligono": "529",
         "parcela": "10486",
-        "plantacion": "Monte",
-        "superficie": "88ca",
+        "referencia": '09287A529104860000DA',
+        "plantacion": "Chopos ribera",
+        "superficie": "1.840 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.6905123660",
@@ -199,12 +185,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.6905123660, -3.5751508127) ,new google.maps.LatLng(41.6906841229, -3.5748352958)  ,new google.maps.LatLng(41.6914251257,-3.5747629898) ,new google.maps.LatLng(41.6911061520,-3.5750193473),new google.maps.LatLng(41.6907675475,-3.5751442395),new google.maps.LatLng(41.6905123660,-3.5751508127) "
     },
     {
-        "id": "17",
+        "id": "14",
         "descripcion": "Pinos La Tejera 1",
         "poligono": "534",
         "parcela": "6340",
-        "plantacion": "Monte",
-        "superficie": "88ca",
+        "referencia": '09287A534063400000DW',
+        "plantacion": "Piñoneros",
+        "superficie": "805 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.6876725733",
@@ -212,12 +199,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.6876725733, -3.5813878750) ,new google.maps.LatLng(41.6879842416, -3.5808471305)  ,new google.maps.LatLng(41.6881408827, -3.5810807321) ,new google.maps.LatLng(41.6876725733, -3.5813878750)  "
     },
     {
-        "id": "18",
+        "id": "15",
         "descripcion": "Pinos La Tejera 2",
         "poligono": "534",
         "parcela": "6337",
-        "plantacion": "Monte",
-        "superficie": "88ca",
+        "referencia": '09287A534063370000DW',
+        "plantacion": "Piñoneros",
+        "superficie": "1.806 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.6881408827",
@@ -225,12 +213,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.6881408827, -3.5810807321) ,new google.maps.LatLng(41.6884073330, -3.5810050270)  ,new google.maps.LatLng(41.6884816159, -3.5812516074) ,new google.maps.LatLng(41.6886947752, -3.5812364665),new google.maps.LatLng(41.6887222274, -3.5815111648),new google.maps.LatLng(41.6883637321, -3.5816214767) ,new google.maps.LatLng(41.6881408827, -3.5810807321) "
     },
     {
-        "id": "19",
+        "id": "16",
         "descripcion": "El Hoyo",
         "poligono": "527",
         "parcela": "26399",
+        "referencia": '09287A527263990000DJ',
         "plantacion": "Chopos",
-        "superficie": "88ca",
+        "superficie": "498 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.6961671525",
@@ -238,12 +227,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.6961671525, -3.5883790095) ,new google.maps.LatLng(41.6962272886, -3.5883885997)  ,new google.maps.LatLng(41.6962874426, -3.5883751734) ,new google.maps.LatLng(41.6964764232, -3.5880663679),new google.maps.LatLng(41.6965222410, -3.5880280069),new google.maps.LatLng(41.6965752177, -3.5880280069) ,new google.maps.LatLng(41.6963507354, -3.5885238992) ,new google.maps.LatLng(41.6961671525, -3.5883790095)  "
     },
     {
-        "id": "20",
+        "id": "17",
         "descripcion": "Picon Cooperatica",
         "poligono": "519",
         "parcela": "6821",
+        "referencia": '09287A519068210000DM',
         "plantacion": "Chopos",
-        "superficie": " ",
+        "superficie": "1.900 m2",
         "cepas": " ",
         "edad": " ",
         "latitud": "41.7028633367",
@@ -251,12 +241,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7028633367, -3.5801836725),new google.maps.LatLng(41.7033680857, -3.5808373631),new google.maps.LatLng(41.7029586785, -3.5810665305),new google.maps.LatLng(41.7029025951, -3.5807941594),new google.maps.LatLng(41.7028633367, -3.5801836725)"
     },
     {
-        "id": "21",
+        "id": "18",
         "descripcion": "Pilar Cooperativa",
         "poligono": "519",
         "parcela": "537",
+        "referencia": '09287A519005370000DY',
         "plantacion": "Chopos",
-        "superficie": "88ca",
+        "superficie": "84.079 m2 - Secano",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7041212990",
@@ -264,12 +255,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7041212990, -3.5819949903) ,new google.maps.LatLng(41.7043547953, -3.5819512614)  ,new google.maps.LatLng(41.7045531409, -3.5819008051) ,new google.maps.LatLng(41.7046862978, -3.5818503487),new google.maps.LatLng(41.7048694883, -3.5816754334),new google.maps.LatLng(41.7050427255, -3.5821766331) ,new google.maps.LatLng(41.7042920275, -3.5825971027) ,new google.maps.LatLng(41.7041212990, -3.5819949903)  "
     },
     {
-        "id": "22",
+        "id": "19",
         "descripcion": "El Campo 6842",
         "poligono": "519",
         "parcela": "6842",
+        "referencia": '09287A519068420000DB',
         "plantacion": "Chopos",
-        "superficie": "88ca",
+        "superficie": "849 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7032583433",
@@ -278,12 +270,13 @@ fincas = [
     }
     ,
     {
-        "id": "23",
+        "id": "20",
         "descripcion": "El Campo 6843",
         "poligono": "519",
         "parcela": "6843",
+        "referencia": '09287A519068430000DY',
         "plantacion": "Chopos",
-        "superficie": "88ca",
+        "superficie": "424 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7032770620",
@@ -292,12 +285,13 @@ fincas = [
     },
 
     {
-        "id": "24",
+        "id": "21",
         "descripcion": "El Campo 6845",
         "poligono": "519",
         "parcela": "6845",
+        "referencia": '09287A519068450000DQ',
         "plantacion": "Chopos",
-        "superficie": "88ca",
+        "superficie": "2.084 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7033672725",
@@ -305,12 +299,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7033672725, -3.5846221929) ,new google.maps.LatLng(41.7033364319, -3.5844180309)  ,new google.maps.LatLng(41.7046952183, -3.5837982537) ,new google.maps.LatLng(41.7047387571, -3.5839270701),                    new google.maps.LatLng(41.7037779800, -3.5843491770),new google.maps.LatLng( 41.7037808598 , -3.5844224824 ) ,new google.maps.LatLng(41.7033672725, -3.5846221929)   "
     },
     {
-        "id": "25",
+        "id": "22",
         "descripcion": "El Campo 6862",
         "poligono": "519",
         "parcela": "6862",
+        "referencia": '09287A519068620000DI',
         "plantacion": "Chopos",
-        "superficie": "39ca",
+        "superficie": "395 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7032235063",
@@ -318,12 +313,13 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7032235063, -3.5846965308) ,new google.maps.LatLng(41.7031770346, -3.5843390709)  ,new google.maps.LatLng(41.7032751415, -3.5842975594) ,new google.maps.LatLng(41.7033112861, -3.5844290124),new google.maps.LatLng(41.7033439883, -3.5846411822) ,new google.maps.LatLng(41.7032235063, -3.5846965308) "
     },
     {
-        "id": "26",
+        "id": "23",
         "descripcion": "Pinosa camino Coperativa",
         "poligono": "519",
         "parcela": "6891",
+        "referencia": '09287A519068910000DR',
         "plantacion": "Piñonero",
-        "superficie": "36,66ca",
+        "superficie": "3.666 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7012336628",
@@ -331,34 +327,22 @@ fincas = [
         "recinto": "new google.maps.LatLng(41.7009905125 , -3.5850099308 ) ,new google.maps.LatLng(41.7008862950 , -3.5857816018 )  ,new google.maps.LatLng(41.7008972652 , -3.5857779272 ) ,new google.maps.LatLng(41.7010782744 , -3.5856382915 ),new google.maps.LatLng(41.7012346001 , -3.5860057539 ) ,new google.maps.LatLng(41.7014814293 , -3.5858550943 ),new google.maps.LatLng(41.7013146611,-3.5849554607 ),new google.maps.LatLng(41.7009771672 , -3.5850006799 ) "
     },
     {
-        "id": "27",
+        "id": "24",
         "descripcion": "Pinosa Conejos Coperativa",
         "poligono": "519",
         "parcela": "6850",
+        "referencia": '09287A519068500000DL',
         "plantacion": "Piñonero",
-        "superficie": "12,78ca",
+        "superficie": "1.278 m2",
         "cepas": "-----",
         "edad": "---",
         "latitud": "41.7022999673",
         "longitud": "-3.5864392650",
         "recinto": "new google.maps.LatLng(41.7024575551 , -3.5866157991 ) ,new google.maps.LatLng(41.7028022971 , -3.5861035041 )  ,new google.maps.LatLng(41.7027494791 , -3.5860273521 ) ,new google.maps.LatLng(41.7026848942 , -3.5860654281 ),new google.maps.LatLng(41.7026435599 , -3.5859788917 ) ,new google.maps.LatLng(41.7025273070 , -3.5860931197 ),new google.maps.LatLng(41.7022999673,-3.5864358036 ),new google.maps.LatLng(41.7022999673 , -3.5864392650) "
     },
+   
     {
-        "id": "28",
-        "descripcion": "Majada las Vacasa",
-        "poligono": "519",
-        "parcela": "6850",
-        "plantacion": "Piñonero",
-        "superficie": "12,78ca",
-        "cepas": "-----",
-        "edad": "---",
-        "latitud": "41.7344",
-        "longitud": "-3.5749",
-        "recinto": "new google.maps.LatLng(41.7344 , -3.5749 ) ,new google.maps.LatLng(41.7344 , -3.5749  ) "
-    },
-
-    {
-        id: 29,
+        id: 25,
         descripcion: 'Ctra Hontoria fila pequeña',
         poligono: '509',
         parcela: '5105',
@@ -372,7 +356,7 @@ fincas = [
         recinto: 'new google.maps.LatLng(41.71882970808938, -3.5579010348766116), new google.maps.LatLng(41.71907996424792, -3.5570293169467715), new google.maps.LatLng(41.719126011274945, -3.557112465426233), new google.maps.LatLng(41.719007890574154, -3.5575818520038394), new google.maps.LatLng(41.71902390695311, -3.5576033096759585), new google.maps.LatLng(41.71894382501855, -3.55794395022085), new google.maps.LatLng(41.718839718354424, -3.5579090815036563)'
     },
     {
-        id: '30',
+        id: '26',
         descripcion: 'Piñoneros El Prado',
         poligono: '517',
         parcela: '5653',
@@ -386,7 +370,7 @@ fincas = [
         recinto: 'new google.maps.LatLng(41.711526816049194, -3.5934237850272677), new google.maps.LatLng(41.711731048351936, -3.594287456330063), new google.maps.LatLng(41.711873209669804, -3.594212354477646), new google.maps.LatLng(41.7116389436683, -3.5934023273551485), new google.maps.LatLng(41.711540832012275, -3.593415738400223)'
     },
     {
-        id: '31',
+        id: '27',
         descripcion: 'Huerto Presa',
         poligono: '520',
         parcela: '10587',
@@ -400,7 +384,7 @@ fincas = [
         recinto: 'new google.maps.LatLng(41.69683617386373, -3.5750245168325234), new google.maps.LatLng(41.69686621492955, -3.575131805193119), new google.maps.LatLng(41.696892250508526, -3.5751143708345223), new google.maps.LatLng(41.69692129018036, -3.5750942542669106), new google.maps.LatLng(41.696954335308234, -3.5750754788038064), new google.maps.LatLng(41.69696935581529, -3.5750674321767617), new google.maps.LatLng(41.69698337495203, -3.5749708726522256), new google.maps.LatLng(41.69684218207801, -3.5750245168325234)'
     },
     {
-        id: '32',
+        id: '28',
         descripcion: 'Huerto Puente la Tajo',
         poligono: '529 ',
         parcela: '10621',
@@ -414,7 +398,7 @@ fincas = [
         recinto: 'new google.maps.LatLng(41.69578195834165, -3.5755248463806755), new google.maps.LatLng(41.6957439056811, -3.5753451383766777), new google.maps.LatLng(41.69564977531883, -3.575358549421752), new google.maps.LatLng(41.69568782803504, -3.5755302107987053), new google.maps.LatLng(41.6957779527995, -3.5755302107987053)'
     },
     {
-        id: '33',
+        id: '29',
         descripcion: 'San Pedro 5203',
         poligono: '536 ',
         parcela: '5203',
@@ -429,7 +413,7 @@ fincas = [
     },
 
     {
-        id: '34',
+        id: '30',
         descripcion: 'San Pedro 5206',
         poligono: '536 ',
         parcela: '5206',
@@ -443,7 +427,7 @@ fincas = [
         recinto: 'new google.maps.LatLng(41.68661985185423, -3.5756181458040426), new google.maps.LatLng(41.686575784600805, -3.5754491666361043), new google.maps.LatLng(41.687138641341456, -3.5751273015543172), new google.maps.LatLng(41.6871686869365, -3.5751407125993917), new google.maps.LatLng(41.687200735555734, -3.575210450033779), new google.maps.LatLng(41.68662586102283, -3.575612781386013)'
     },
     {
-        id: '35',
+        id: '31',
         descripcion: 'Bajamontero Grande',
         poligono: '503 ',
         parcela: '22',
@@ -457,7 +441,7 @@ fincas = [
         recinto: 'new google.maps.LatLng(41.71917148342693, -3.5643334353393663), new google.maps.LatLng(41.71806634645417, -3.5625524485534776), new google.maps.LatLng(41.71846275646717, -3.5622627699798692), new google.maps.LatLng(41.719235548755606, -3.5634536707824815), new google.maps.LatLng(41.719259573237395, -3.5635287726348985), new google.maps.LatLng(41.71926758139598, -3.5636038744873155), new google.maps.LatLng(41.71924355691719, -3.5638023579544176), new google.maps.LatLng(41.71926758139598, -3.5639096463150133), new google.maps.LatLng(41.71927558955358, -3.5641349518722643), new google.maps.LatLng(41.71924355691719, -3.5642315113968004), new google.maps.LatLng(41.71917949159651, -3.5643334353393663)'
     },
     {
-        id: '36',
+        id: '32',
         descripcion: 'Uruela Encina Grande',
         poligono: '507 ',
         parcela: '16239',
@@ -472,7 +456,7 @@ fincas = [
     },
 
     {
-        id: '37',
+        id: '33',
         descripcion: 'Uruela Picon ',
         poligono: '507 ',
         parcela: '6233',
@@ -487,7 +471,7 @@ fincas = [
     },
 
     {
-        id: '38',
+        id: '34',
         descripcion: 'Zamoranos Carretera Villanueva',
         poligono: '517 ',
         parcela: '5911',
@@ -502,7 +486,7 @@ fincas = [
     },
 
     {
-        id: '39',
+        id: '35',
         descripcion: 'Zamoranos',
         poligono: '519 ',
         parcela: '506',
@@ -519,7 +503,7 @@ fincas = [
   
 
     {
-        id: '40',
+        id: '36',
         descripcion: 'Carretera de Aranda Cascajo',
         poligono: '528 ',
         parcela: '6480',
@@ -534,7 +518,7 @@ fincas = [
     },
 
     {
-        id: '41',
+        id: '37',
         descripcion: 'Cascorral 1',
         poligono: '523 ',
         parcela: '45545',
@@ -549,7 +533,7 @@ fincas = [
     },
 
     {
-        id: '42',
+        id: '38',
         descripcion: 'Cascorral 2',
         poligono: '523 ',
         parcela: '35545',
@@ -564,7 +548,7 @@ fincas = [
     },
 
     {
-        id: '43',
+        id: '39',
         descripcion: 'Cascorral atras',
         poligono: '523 ',
         parcela: '45631',
@@ -577,4 +561,18 @@ fincas = [
         longitud: '-3.6082667575827987',
         recinto: 'new google.maps.LatLng(41.69829237654709, -3.6082667575827987), new google.maps.LatLng(41.69848062939859, -3.6074191795340926), new google.maps.LatLng(41.6985166777541, -3.607435272788182), new google.maps.LatLng(41.69885312809778, -3.607682036017552), new google.maps.LatLng(41.6988691494988, -3.607708858107701), new google.maps.LatLng(41.69887716019784, -3.6077732311240585), new google.maps.LatLng(41.69888116554696, -3.6085778938285262), new google.maps.LatLng(41.698761004964375, -3.608556436156407), new google.maps.LatLng(41.69837248421083, -3.6083472238532455), new google.maps.LatLng(41.69828036038893, -3.6082774864188583)'
     },
+    {
+        "id": "40",
+        "descripcion": "Majada las Vacasa",
+        "poligono": "519",
+        "parcela": "6850",
+        "referencia": '',
+        "plantacion": "Piñonero",
+        "superficie": "12,78ca",
+        "cepas": "-----",
+        "edad": "---",
+        "latitud": "41.7344",
+        "longitud": "-3.5749",
+        "recinto": "new google.maps.LatLng(41.7344 , -3.5749 ) ,new google.maps.LatLng(41.7344 , -3.5749  ) "
+    }
 ]
