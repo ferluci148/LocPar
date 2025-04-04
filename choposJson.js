@@ -9,9 +9,9 @@ fincas = [
         "superficie": "4.308 m2",
         "cepas": "--",
         "edad": "--",
-        "latitud": "41.69813473375674",
-        "longitud": " -3.5735607147216797",
-        "recinto": "new google.maps.LatLng(41.69813473375674, -3.5735607147216797),new google.maps.LatLng(41.69781430131848, -3.572101593017578),new google.maps.LatLng(41.69739773676192, -3.572230339050293),new google.maps.LatLng(41.69781430131848, -3.573904037475586),new google.maps.LatLng(41.69813473375674, -3.5735607147216797)"
+        "latitud": "41.69703658225671",
+        "longitud": " -3.574679444059927",
+        "recinto": "new google.maps.LatLng(41.69703658225671, -3.574679444059927), new google.maps.LatLng(41.69667208400956, -3.572463939413626), new google.maps.LatLng(41.696515869842685, -3.5725068547578642), new google.maps.LatLng(41.69679224849513, -3.5747974612565825), new google.maps.LatLng(41.69684431970248, -3.574781368002493), new google.maps.LatLng(41.696928434640675, -3.5747438170762846), new google.maps.LatLng(41.69701655493413, -3.5746955373140166)"
 
     },
     {
@@ -26,9 +26,9 @@ fincas = [
         "superficie": "7.092 m2",
         "cepas": "--",
         "edad": "--",
-        "latitud": "41.6937767158053",
-        "longitud": "-3.575577735900879",
-        "recinto": " new google.maps.LatLng( 41.6937767158053, -3.575577735900879),new google.maps.LatLng(41.693904897018726, -3.5736465454101562),new google.maps.LatLng(41.69350432987867, -3.5734963417053222),new google.maps.LatLng(41.693328079546774, -3.5755348205566406),new google.maps.LatLng(41.6937767158053, -3.575577735900879)"
+        "latitud": "41.693810702277695",
+        "longitud": "-3.575543670895782",
+        "recinto": "new google.maps.LatLng(41.693810702277695, -3.575543670895782), new google.maps.LatLng(41.6939468947365, -3.5735910227329404), new google.maps.LatLng(41.693530305130984, -3.573548107388702), new google.maps.LatLng(41.69341013455105, -3.5754900267154843), new google.maps.LatLng(41.693754622946145, -3.5755329420597226)"
     },
     {
         "id": "3",
@@ -40,9 +40,9 @@ fincas = [
         "superficie": "9.035 m2",
         "cepas": "--",
         "edad": "--",
-        "latitud": "41.700890386820035",
-        "longitud": " -3.5673165321350098",
-        "recinto": "new google.maps.LatLng(41.700890386820035, -3.5673165321350098),new google.maps.LatLng(41.70084232411562, -3.5641837120056152),new google.maps.LatLng(41.70114672063683, -3.564162254333496),new google.maps.LatLng(41.70138703266202, -3.5675954818725586),new google.maps.LatLng(41.700890386820035, -3.5673165321350098)"
+        "latitud": "41.70092890135905",
+        "longitud": "-3.567413501575827",
+        "recinto": "new google.maps.LatLng(41.70092890135905, -3.567413501575827), new google.maps.LatLng(41.70092890135905, -3.564189486339926), new google.maps.LatLng(41.70112115170229, -3.5641787575038664), new google.maps.LatLng(41.70133342745525, -3.5676173494609587), new google.maps.LatLng(41.70118122981667, -3.567611985042929), new google.maps.LatLng(41.701125156911644, -3.56757979853475), new google.maps.LatLng(41.70094492224294, -3.567429594829916)"
     },
     {
         "id": "4",
@@ -54,9 +54,9 @@ fincas = [
         "superficie": "9.370 m2",
         "cepas": "--",
         "edad": "--",
-        "latitud": "41.69005934949943",
-        "longitud": "-3.5948359966278076",
-        "recinto": "new google.maps.LatLng(41.69005934949943, -3.5948359966278076),new google.maps.LatLng(41.69016350277359, -3.593752384185791),new google.maps.LatLng(41.68881750900814, -3.593430519104004),new google.maps.LatLng(41.6887854611943, -3.5946428775787354),new google.maps.LatLng(41.69005934949943, -3.5948359966278076)"
+        "latitud": "41.690845470736555",
+        "longitud": "-3.5924393304895386",
+        "recinto": "new google.maps.LatLng(41.690845470736555, -3.5924393304895386), new google.maps.LatLng(41.69094161105151, -3.59214965191593), new google.maps.LatLng(41.68930720615593, -3.5916883119653686), new google.maps.LatLng(41.689162991965645, -3.592031634719275), new google.maps.LatLng(41.689050825149685, -3.5922676691125854), new google.maps.LatLng(41.69069324827733, -3.592707551391028), new google.maps.LatLng(41.69082944733677, -3.592503703505896)"
     },
     {
         "id": "5",
@@ -68,9 +68,9 @@ fincas = [
         "superficie": "3.858 m2",
         "cepas": "--",
         "edad": "--",
-        "latitud": "41.69039584408525",
-        "longitud": "-3.602914810180664",
-        "recinto": "new google.maps.LatLng(41.69039584408525, -3.602914810180664),new google.maps.LatLng(41.690532043774375, -3.6022067070007324),new google.maps.LatLng(41.689033831334065, -3.602238893508911),new google.maps.LatLng(41.68906587902419, -3.6027538776397705),new google.maps.LatLng(41.69039584408525, -3.602914810180664)"
+        "latitud": "41.69074710091071",
+        "longitud": "-3.60105030939482",
+        "recinto": "new google.maps.LatLng(41.69074710091071, -3.60105030939482), new google.maps.LatLng(41.69079917701212, -3.6007874529113604), new google.maps.LatLng(41.68902455995109, -3.600825003837569), new google.maps.LatLng(41.68903257187627, -3.601098589157088), new google.maps.LatLng(41.69072707162971, -3.60105030939482)"
     },
     {
         "id": "6",
@@ -82,9 +82,9 @@ fincas = [
         "superficie": "7.479 m2",
         "cepas": "--",
         "edad": "-",
-        "latitud": "41.68975490050034",
-        "longitud": "-3.6064231395721436",
-        "recinto": "new google.maps.LatLng(41.68975490050034, -3.6064231395721436),new google.maps.LatLng(41.68986706608868, -3.6058545112609863),new google.maps.LatLng(41.68855311406642, -3.605661392211914),new google.maps.LatLng(41.68854510208153, -3.606240749359131),new google.maps.LatLng(41.68975490050034, -3.6064231395721436)"
+        "latitud": "41.68979365888381",
+        "longitud": "-3.606369094056181",
+        "recinto": "new google.maps.LatLng(41.68979365888381, -3.606369094056181), new google.maps.LatLng(41.68984172984523, -3.606041864556364), new google.maps.LatLng(41.68986576531247, -3.6059774915400067), new google.maps.LatLng(41.68991383622, -3.6057843724909344), new google.maps.LatLng(41.688535789292544, -3.60563953320413), new google.maps.LatLng(41.68848371135887, -3.6058541099253216), new google.maps.LatLng(41.6884957293473, -3.606041864556364), new google.maps.LatLng(41.68848771735525, -3.6062618056955853), new google.maps.LatLng(41.68978965296875, -3.6063851873102704)"
     },
     {
         "id": "7",
@@ -96,9 +96,9 @@ fincas = [
         "superficie": "2.090 m2",
         "cepas": "__",
         "edad": "30/12",
-        "latitud": "41.6896988176328",
-        "longitud": "-3.606905937194824",
-        "recinto": "new google.maps.LatLng(41.6896988176328, -3.606905937194824),new google.maps.LatLng(41.68970682947404, -3.6067771911621094),new google.maps.LatLng(41.688569138033216, -3.6066484451293945),new google.maps.LatLng(41.68853709009564, -3.6067771911621094),new google.maps.LatLng(41.6896988176328, -3.606905937194824)"
+        "latitud": "41.6897006315797",
+        "longitud": "-3.6069055748041867",
+        "recinto": "new google.maps.LatLng(41.6897006315797, -3.6069055748041867), new google.maps.LatLng(41.68974069077464, -3.6067178201731442), new google.maps.LatLng(41.68845077216711, -3.606594438558459), new google.maps.LatLng(41.6884267361712, -3.6067929220255612), new google.maps.LatLng(41.68967659605075, -3.606921668058276)"
     },
     {
         id: '8',
@@ -436,9 +436,9 @@ fincas = [
         superficie: '8.401 m2',
         cepas: '80',
         edad: '30',
-        latitud: '41.71917148342693',
-        longitud: '-3.5643334353393663',
-        recinto: 'new google.maps.LatLng(41.71917148342693, -3.5643334353393663), new google.maps.LatLng(41.71806634645417, -3.5625524485534776), new google.maps.LatLng(41.71846275646717, -3.5622627699798692), new google.maps.LatLng(41.719235548755606, -3.5634536707824815), new google.maps.LatLng(41.719259573237395, -3.5635287726348985), new google.maps.LatLng(41.71926758139598, -3.5636038744873155), new google.maps.LatLng(41.71924355691719, -3.5638023579544176), new google.maps.LatLng(41.71926758139598, -3.5639096463150133), new google.maps.LatLng(41.71927558955358, -3.5641349518722643), new google.maps.LatLng(41.71924355691719, -3.5642315113968004), new google.maps.LatLng(41.71917949159651, -3.5643334353393663)'
+        latitud: '41.719175219978894',
+        longitud: '-3.564340762824625',
+        recinto: 'new google.maps.LatLng(41.719175219978894, -3.564340762824625), new google.maps.LatLng(41.71806607891657, -3.562543682784647), new google.maps.LatLng(41.71831433597958, -3.5623720214076937), new google.maps.LatLng(41.71846248893123, -3.562270097465128), new google.maps.LatLng(41.71921926489664, -3.5634234473415316), new google.maps.LatLng(41.71925129754513, -3.563493184775919), new google.maps.LatLng(41.7192673138634, -3.5635951087184847), new google.maps.LatLng(41.719239285303814, -3.563793592185587), new google.maps.LatLng(41.71927131794234, -3.563911609382242), new google.maps.LatLng(41.719283330177674, -3.564040355414957), new google.maps.LatLng(41.719283330177674, -3.564158372611612), new google.maps.LatLng(41.71920324856641, -3.5643193051525057)'
     },
     {
         id: '32',
@@ -480,9 +480,9 @@ fincas = [
         superficie: '1.330 m2',
         cepas: '18',
         edad: '0',
-        latitud: '41.71185618228193',
-        longitud: '-3.5872734471660084',
-        recinto: 'new google.maps.LatLng(41.71185618228193, -3.5872734471660084), new google.maps.LatLng(41.711882211791846, -3.587353913436455), new google.maps.LatLng(41.71193226851205, -3.587458519588036), new google.maps.LatLng(41.71142969727214, -3.588134436259789), new google.maps.LatLng(41.71132157386228, -3.587984232554955), new google.maps.LatLng(41.711852177740994, -3.587278811584038)'
+        latitud: '41.71186082964645',
+        longitud: '-3.587271480371521',
+        recinto: 'new google.maps.LatLng(41.71186082964645, -3.587271480371521), new google.maps.LatLng(41.71193691587108, -3.5874592350025636), new google.maps.LatLng(41.711428337816585, -3.5881405160923463), new google.maps.LatLng(41.71132421897851, -3.5879903123875123), new google.maps.LatLng(41.71184080694079, -3.5872822092075807)'
     },
 
     {
